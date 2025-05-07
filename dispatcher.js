@@ -1,9 +1,14 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    const { data, error } = await supabase.from("bolos").select("*").order("created_at", { ascending: false });
-    const boloSection = document.getElementById("bolo-section");
-    boloSection.innerHTML = "<h2>BOLOs</h2>" + data.map(b => `<p>${b.description}</p>`).join("");
-
-    const callRes = await supabase.from("calls").select("*").order("created_at", { ascending: false });
-    const callSection = document.getElementById("calls-section");
-    callSection.innerHTML = "<h2>Calls</h2>" + callRes.data.map(c => `<p>${c.call_type}: ${c.details}</p>`).join("");
+    await loadCalls();
+    await loadBOLOs();
 });
+async function loadCalls() {
+    const { data, error } = await supabase.from("calls").select("*");
+    if (error) return console.error("Failed to load calls");
+    document.getElementById("call-list").innerHTML = "<h3>Calls</h3>" + data.map(call => `<p>${call.details}</p>`).join("");
+}
+async function loadBOLOs() {
+    const { data, error } = await supabase.from("bolos").select("*");
+    if (error) return console.error("Failed to load BOLOs");
+    document.getElementById("bolo-list").innerHTML = "<h3>BOLOs</h3>" + data.map(b => `<p>${b.description}</p>`).join("");
+}

@@ -1,3 +1,6 @@
+function navigate(path) {
+    window.location.href = path;
+}
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Main page loaded");
+    console.log("Main script initialized");
 });

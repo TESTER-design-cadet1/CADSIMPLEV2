@@ -1,11 +1,16 @@
 body {
     background-color: #1a1a2e;
     color: white;
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
     padding: 20px;
 }
-input, button {
-    margin: 5px;
+button, input {
     padding: 10px;
+    margin: 5px;
     font-size: 1em;
+}
+.login-container {
+    max-width: 300px;
+    margin: auto;
+    padding-top: 100px;
 }

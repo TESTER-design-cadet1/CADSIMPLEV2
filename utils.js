@@ -1,4 +1,6 @@
-// Common utility functions
-function formatDateTime(date) {
-    return new Date(date).toLocaleString();
+function formatTimestamp(ts) {
+    return new Date(ts).toLocaleString();
+}
+function getRandomId() {
+    return Math.random().toString(36).substr(2, 9);
 }

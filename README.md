@@ -1,16 +1,12 @@
-# CADsimpleV5
-This is a realistic web-based MDT (Mobile Data Terminal) system for roleplay scenarios.
-Integrates Supabase for:
-- Authentication
-- BOLOs
-- Calls
-- Reports
-- Dispatcher panel
+# CADsimpleV7
+A fully browser-based MDT system modeled after FiveM/ERLC.
+
+## Features
+- Supabase integration
+- Dispatcher panel for calls and BOLOs
+- Role-based access planned
+- Scalable layout
 
 ## Setup
-1. Create a Supabase project.
-2. Add tables (bolos, calls, reports, users).
-3. Replace the Supabase credentials in `supabase.js`.
-
-## Hosting
-Push this to GitHub and use GitHub Pages or Netlify for free hosting.
+1. Set up a Supabase project and replace credentials in supabase.js
+2. Host via GitHub Pages or Netlify
